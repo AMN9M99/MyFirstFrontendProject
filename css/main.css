@@ -1,56 +1,31 @@
-
-
 /* ===================================================
    ШПАРГАЛКА CSS – основные свойства и их назначение
    =================================================== */
 
 /* 
 margin: задаёт внешние отступы вокруг элемента
-
 padding: задаёт внутренние отступы внутри элемента
-
 width / height: ширина и высота элемента
-
 font-family: шрифт текста
-
 font-size: размер текста
-
 font-weight: толщина текста (400=обычный, 700=жирный)
-
 color: цвет текста
-
 background / background-color: фон элемента
-
 background-image: изображение на фоне
-
 text-align: выравнивание текста (left, center, right)
-
 text-transform: изменение регистра текста (uppercase, lowercase)
-
 display: способ отображения элемента (block, inline, inline-block, flex)
-
 position: позиционирование элемента (static, relative, absolute, fixed)
-
 top / right / bottom / left: координаты элемента при position != static
-
 float: обтекание элемента (left, right)
-
 z-index: порядок наложения элементов (чем больше, тем выше)
-
 border-radius: скругление углов
-
 border: рамка вокруг элемента
-
 list-style: тип маркера в списке (none, disc, decimal)
-
 overflow: поведение при переполнении (visible, hidden, scroll)
-
 transition: анимация изменения свойств (скорость, эффект)
-
 flex / justify-content / align-items / flex-wrap: настройки flex-контейнера
-
 cursor: вид курсора при наведении
-
 opacity: прозрачность элемента (0-1)
 */
 
@@ -58,68 +33,54 @@ opacity: прозрачность элемента (0-1)
    Дальше идёт твой CSS код с комментариями построчно
    =================================================== */
 
-
-
-
-
-/* Импорт шрифта Poppins с Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
 
-/* Сброс стандартных отступов у всех элементов */
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-/* Основные стили для body */
-body{
-    font-family: 'Poppins', sans-serif; /* Подключённый шрифт */
+body {
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: #fff; /* Белый текст */
+    color: #fff;
+    background: #000;
 }
 
-/* Убираем подчёркивание у всех ссылок */
-a{
+a {
     text-decoration: none;
 }
 
-/* Чтобы изображения не выходили за границы родителя */
-img{
+img {
     max-width: 100%;
 }
 
-/* Основной контейнер с фоновым градиентом */
-.wrapper{
-    background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(26, 14, 1, 1) 100%);
+.wrapper {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(26, 14, 1, 1) 100%);
     width: 100%;
     overflow-x: hidden;
-
 }
 
-/* Центровка контента и ограничение ширины */
-.container{
+.container {
     width: 1400px;
     margin: 0 auto;
 }
 
-/* Отступы сверху и снизу для шапки */
-header{
+header {
     padding: 50px 0;
 }
 
-/* Стили логотипа в header и footer */
 header .logo,
-footer .blocks .logo{
-    text-transform: uppercase; /* Все буквы заглавные */
+footer .blocks .logo {
+    text-transform: uppercase;
     font-size: 29px;
     font-weight: 800;
     color: #fff;
     display: inline-block;
 }
 
-/* Полоска под активным пунктом меню */
-header nav ul li.active::after{
+header nav ul li.active::after {
     content: '';
     display: block;
     width: 40px;
@@ -131,14 +92,12 @@ header nav ul li.active::after{
     left: -15px;
 }
 
-/* Контейнер навигации */
-header nav{
+header nav {
     float: right;
     width: 50%;
 }
 
-/* Горизонтальное меню */
-header nav ul{
+header nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -146,22 +105,18 @@ header nav ul{
     position: relative;
 }
 
-/* Каждый элемент меню */
-header nav ul li{
+header nav ul li {
     display: inline-block;
 }
 
-/* Ссылки в меню */
-header nav ul li a{
+header nav ul li a {
     color: #fff;
 }
 
-/* Эффект при наведении на пункты меню (кроме активного и кнопки) */
-header nav ul li:not(.active):not(.btn) a:hover{
+header nav ul li:not(.active):not(.btn) a:hover {
     border-bottom: 5px solid #DC7000;
 }
 
-/* Кнопка в меню и кнопка подписки */
 header nav ul li.btn a,
 .email .block button {
     background: #fa9021;
@@ -170,47 +125,41 @@ header nav ul li.btn a,
     transition: all 500ms ease;
 }
 
-/* Эффект наведения на кнопку */
 header nav ul li.btn a:hover,
 .email .block button:hover {
     background: #af0707;
 }
 
-/* Главный баннер (герой-секция) */
-.hero{
+.hero {
     padding-bottom: 100px;
     position: relative;
     z-index: 1;
 }
 
-/* Информационный блок в герое */
-.hero--info{
+.hero--info {
     width: 530px;
     padding-top: 70px;
 }
 
-/* Малый заголовок */
-.hero--info h2{
+.hero--info h2 {
     color: #e87d0e;
     font-size: 20px;
     font-weight: 600;
 }
 
-/* Главный заголовок */
-.hero--info h1{
+.hero--info h1 {
     font-size: 50px;
     font-weight: 600;
 }
 
-/* Описание под заголовком */
 .hero--info p {
     font-weight: 500;
     line-height: 170%;
     margin: 30px 0;
 }
 
-/* Кнопка в секции героя */
-.hero--info .btn, .hero-about .info .btn {
+.hero--info .btn, 
+.hero-about .info .btn {
     background: #fa8305;
     color: #fff;
     border-radius: 50px;
@@ -220,13 +169,12 @@ header nav ul li.btn a:hover,
     font-size: 18px;
 }
 
-/* Анимация при наведении на кнопку */
-.hero--info .btn:hover, .hero-about .info .btn:hover {
+.hero--info .btn:hover, 
+.hero-about .info .btn:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
 
-/* Изображение справа от текста в герое */
 .hero img {
     position: absolute;
     top: -150px;
@@ -255,8 +203,8 @@ header nav ul li.btn a:hover,
 }
 
 .work .blocks .block h3 {
-font-size: 20px;
-margin: 20px 0
+    font-size: 20px;
+    margin: 20px 0;
 }
 
 .work .blocks .block .badge {
@@ -264,31 +212,21 @@ margin: 20px 0
     padding: 10px 20px;
 }
 
-.work .blocks .block .badge.purple {
-    background: #560f67;
-}
-.work .blocks .block .badge.brown {
-    background: #31190d;
-}
-.work .blocks .block .badge.green {
-    background: #192a1d;
-}
+.work .blocks .block .badge.purple { background: #560f67; }
+.work .blocks .block .badge.brown { background: #31190d; }
+.work .blocks .block .badge.green { background: #192a1d; }
 
-/* ---------- Вторая секция ---------- */
-
-/* Трендовые игры */
 .trending {
     padding-top: 50px;
 }
 
-/* Заголовок секции */
 .trending h3 {
     font-weight: 600;
     font-size: 31px;
 }
 
-/* Кнопка "See all" */
-.trending .see-all, .projects .see-all {
+.trending .see-all, 
+.projects .see-all {
     color: #fff;
     background: #25211d;
     border-radius: 5px;
@@ -298,12 +236,11 @@ margin: 20px 0
     transition: all 500ms ease;
 }
 
-/* Эффект при наведении на "See all" */
-.trending .see-all:hover, .projects .see-all:hover  {
+.trending .see-all:hover, 
+.projects .see-all:hover {
     transform: scale(1.1);
 }
 
-/* Сетка с карточками игр */
 .trending .games {
     display: flex;
     justify-content: space-between;
@@ -311,21 +248,18 @@ margin: 20px 0
     padding: 50px 0;
 }
 
-/* Подписи под карточками */
 .trending .games span {
     display: block;
     text-align: center;
     margin-top: 20px;
 }
 
-/* Иконка рейтинга */
 .trending .games span img {
     position: relative;
     top: 5px;
     margin-right: 7px;
 }
 
-/* Большой текст между секциями */
 .big-text {
     padding: 50px 0;
     font-size: 35px;
@@ -334,39 +268,33 @@ margin: 20px 0
     width: 800px;
 }
 
-/* ---------- Баннер ---------- */
 .banner {
     padding: 80px 0;
 }
 
-/* Заголовок баннера */
 .banner h3 {
-    font-size:30px;
+    font-size: 30px;
     font-weight: 600;
     margin-bottom: 30px;
 }
 
-/* Текст в баннере */
 .banner p {
     line-height: 170%;
-    margin-bottom:30px;
-    width:550px;
+    margin-bottom: 30px;
+    width: 550px;
 }
 
-/* Картинка баннера */
 .banner img {
     width: 100%;
     margin-bottom: 30px;
 }
 
-/* ---------- Секция с фоном ---------- */
 .features {
     background: url('/img/BG.png') no-repeat center center fixed;
     background-size: cover;
     padding: 80px 0;
 }
 
-/* Заголовок и описание в features */
 .features h3,
 .features p {
     margin-bottom: 20px;
@@ -376,11 +304,8 @@ margin: 20px 0
     margin-right: auto;
 }
 
-.features h3 {
-    font-size: 30px;
-}
+.features h3 { font-size: 30px; }
 
-/* Блоки с иконками/фичами */
 .features .info {
     display: flex;
     justify-content: center;
@@ -393,17 +318,8 @@ margin: 20px 0
     margin: 30px 2%;
 }
 
-/* (Похоже, лишний селектор — без точки перед features) */
-features .info .block {
-    margin-bottom: 15px;
-}
-
-/* ---------- Проекты ---------- */
 .projects {
     padding: 100px 0;
-}
-
-.projects {
     font-size: 30px;
     text-align: center;
 }
@@ -413,14 +329,12 @@ features .info .block {
     text-align: center;
 }
 
-/* Изображения проектов */
 .projects .images {
     display: flex;
     justify-content: space-around;
     margin-bottom: 25px;
 }
 
-/* Кнопка "See all" по центру */
 .projects .see-all {
     float: none;
     width: 110px;
@@ -428,18 +342,15 @@ features .info .block {
     margin: 0 auto;
 }
 
-/* ---------- Подписка на email ---------- */
 .email {
     padding-bottom: 120px;
 }
 
-/* Заголовок */
 .email h3 {
     margin-top: 60px;
     font-size: 30px;
 }
 
-/* Основной блок подписки */
 .email .block {
     background: #1c140f;
     margin-top: 30px;
@@ -451,18 +362,15 @@ features .info .block {
     align-items: center;
 }
 
-/* Заголовок в блоке подписки */
 .email .block h2 {
     font-size: 30px;
     font-weight: 500;
 }
 
-/* Текст слева от формы */
 .email .block p {
     width: 500px;
 }
 
-/* Поле ввода email */
 .email .block input {
     background: #fff;
     outline: none;
@@ -478,12 +386,10 @@ features .info .block {
     padding-right: 120px;
 }
 
-/* Цвет плейсхолдера */
 .email .block input::placeholder {
     color: #898989;
 }
 
-/* Кнопка отправки email */
 .email .block button {
     cursor: pointer;
     border: 0;
@@ -492,8 +398,6 @@ features .info .block {
     z-index: 2;
     color: #fff;
 }
-
-/* Блок "О нас" в hero-about */
 
 .hero-about {
     position: relative;
@@ -509,52 +413,130 @@ features .info .block {
     font-size: 30px;
 }
 
- .hero-about .info .btn {
-    margin-top: 20px;
- }
+.hero-about .info .btn { margin-top: 20px; }
 
- .hero-about img {
-      position: absolute;
-      right: -150px;
-      top: 0;
- }
+.hero-about img {
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
 
-/* ---------- Подвал ---------- */
+.hero-contacts h1 {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 33px;
+}
+
+.hero-contacts p {
+    text-align: center;
+}
+
+.hero-contacts img {
+    width: 70%;
+    margin: 80px 15%;
+}
+
+.feedback {
+    padding: 70px;
+    background: #1c140f;
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.feedback p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.feedback form {
+    margin: 80px auto;
+    width: 600px;
+}
+
+.feedback form .inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedback form .inline > div {
+    width: 50%;
+}
+
+.feedback form label {
+    color: #4f4f4f;
+    font-size: 14px;
+}
+
+.feedback form input,
+.feedback form textarea {
+    background: #2c2420;
+    border-radius: 10px;
+    border: 0.6px solid #cecece;
+    display: block;
+    width: 90%;
+    padding: 15px 10px;
+    outline: none;
+    color: #fff;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.feedback form .one-line {
+    width: 96%;
+}
+
+.feedback form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.feedback form button {
+    background: #DC7000;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    padding: 15px 35px;
+    transition: all 500ms ease;
+    display: block;
+    margin-left: auto;
+}
+
+.feedback form button:hover {
+    background: #af0707;
+}
+
 footer {
     background: #000;
     padding: 50px 0;
 }
 
-/* Контейнер с блоками в подвале */
 footer .blocks {
     display: flex;
     justify-content: space-between;
 }
 
-/* Текст под логотипом */
 footer .blocks p {
     width: 300px;
     margin: 15px 0;
 }
 
-/* Заголовки разделов */
 footer .blocks h4 {
     font-weight: 500;
     font-size: 17px;
 }
 
-/* Списки ссылок */
 footer .blocks ul {
     list-style: none;
 }
 
-/* Элементы списка в подвале */
 footer .blocks ul li {
     margin-top: 7px;
     opacity: 0.8;
 }
 
-/* Линия-разделитель */
 footer hr {
     margin: 30px 0;
     border: 0;
@@ -562,7 +544,6 @@ footer hr {
     background: #ccc;
 }
 
-/* Надпись внизу футера */
 footer > p {
     text-align: center;
 }
